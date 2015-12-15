@@ -111,26 +111,6 @@ public class Sorting {
 	}
 
 	/**
-	 * Merge sort is a sorting algorithm that uses recursion to divide the array
-	 * into smaller arrays with a size of one. Then using a seperate recursive
-	 * method, work backwards from the arrays of size one to merge them back
-	 * together on both the left hand and the right hand sides until the entire
-	 * array is sorted.
-	 * 
-	 * The time complexity of the merge sort is defined by Big O notation
-	 * multiplied by the number of elements, n, multiplied by the logarithm of
-	 * the number of elements, n. Note that merge sort is faster than the
-	 * previous three sorting algorithms.
-	 * 
-	 * @param unsorted The unsorted array.
-	 * @return The sorted array.
-	 */
-	public int[] mergeSort(int[] unsorted) {
-		splitArray(unsorted, 0, unsorted.length - 1);
-		return unsorted;
-	}
-
-	/**
 	 * Split the array.
 	 * 
 	 * @param unsorted The unsorted array.
@@ -182,26 +162,22 @@ public class Sorting {
 	}
 
 	/**
-	 * Quick Sort is a sorting algorithm that randomly selects an element in the
-	 * array called the 'pivot'. Using the pivot, it creates two new seperate
-	 * portions within the array that are greater than and less than the pivot,
-	 * and then considers the pivot sorted. A new pivot is selected and the two
-	 * unsorted sides are recursively sorted using this method until arrays of
-	 * size one are reached.
+	 * Merge sort is a sorting algorithm that uses recursion to divide the array
+	 * into smaller arrays with a size of one. Then using a seperate recursive
+	 * method, work backwards from the arrays of size one to merge them back
+	 * together on both the left hand and the right hand sides until the entire
+	 * array is sorted.
 	 * 
-	 * In a best case scenario, the time complexity of the quick sort is defined
-	 * by Big O notation multiplied by the number of elements, n, multiplied by
-	 * the logarithm of the number of elements, n. However, in a worst case
-	 * scenario, the time complexity of the quick sort is defined by Big O
-	 * notation multiplied by the number of elements, n, squared. So depending
-	 * on the number of elements, quick sort will comparatively become better or
-	 * worse.
+	 * The time complexity of the merge sort is defined by Big O notation
+	 * multiplied by the number of elements, n, multiplied by the logarithm of
+	 * the number of elements, n. Note that merge sort is faster than the
+	 * previous three sorting algorithms.
 	 * 
 	 * @param unsorted The unsorted array.
 	 * @return The sorted array.
 	 */
-	public int[] quickSort(int[] unsorted) {
-		qSort(unsorted, 0, unsorted.length - 1);
+	public int[] mergeSort(int[] unsorted) {
+		splitArray(unsorted, 0, unsorted.length - 1);
 		return unsorted;
 	}
 
@@ -235,5 +211,29 @@ public class Sorting {
 			qSort(unsorted, startIndex, rightSide);
 		if (leftSide < endIndex)
 			qSort(unsorted, leftSide, endIndex);
+	}
+
+	/**
+	 * Quick Sort is a sorting algorithm that randomly selects an element in the
+	 * array called the 'pivot'. Using the pivot, it creates two new seperate
+	 * portions within the array that are greater than and less than the pivot,
+	 * and then considers the pivot sorted. A new pivot is selected and the two
+	 * unsorted sides are recursively sorted using this method until arrays of
+	 * size one are reached.
+	 * 
+	 * In a best case scenario, the time complexity of the quick sort is defined
+	 * by Big O notation multiplied by the number of elements, n, multiplied by
+	 * the logarithm of the number of elements, n. However, in a worst case
+	 * scenario, the time complexity of the quick sort is defined by Big O
+	 * notation multiplied by the number of elements, n, squared. So depending
+	 * on the number of elements, quick sort will comparatively become better or
+	 * worse.
+	 * 
+	 * @param unsorted The unsorted array.
+	 * @return The sorted array.
+	 */
+	public int[] quickSort(int[] unsorted) {
+		qSort(unsorted, 0, unsorted.length - 1);
+		return unsorted;
 	}
 }
